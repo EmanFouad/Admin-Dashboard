@@ -1,0 +1,13 @@
+.sidemenu-body > ul li:hover p{
+	color: #4791cf !important;
+	cursor: pointer;
+	transition: 0.5ms ease-in-out;
+}
+.active-sidemenuItem-bg{
+	background-color: #edf4fa;
+	border-radius: 5px;
+	transition: 0.2s ease-in-out;
+}
+.icon-hover:hover{
+	cursor: pointer;
+}
