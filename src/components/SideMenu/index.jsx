@@ -4,8 +4,8 @@ import { Icon } from './Icon';
 import "./sidemenu.css"
 
 const SideMenu = () => {
-	const [activeItem,setActiveItem] = useState(null)
-	const handleActiveItem = (itemId) =>{
+	const [activeItem, setActiveItem] = useState(1)
+	const handleActiveItem = (itemId) => {
 		setActiveItem(itemId)
 	}
 	const sideMenuItems = [
@@ -28,7 +28,7 @@ const SideMenu = () => {
 					/>
 				</div>
 				<nav className='sidemenu-body'>
-					<ul className='list-unstyled p-3'>
+					<ul className='p-3'>
 						{
 							sideMenuItems.map((item, indx) => (
 								<li className={`${item.id === activeItem ? "active-sidemenuItem-bg" : ""}`} key={indx} onClick={() => handleActiveItem(item.id)}>
@@ -38,7 +38,7 @@ const SideMenu = () => {
 												iconName={item.iconName}
 												size={20} color='#72abda'
 											/>
-											<p className='fs-6 fw-bold' style={{color: item.id === activeItem ? "#4791cf" : "#3e3e3e"}}>{item.title}</p>
+											<p className='fs-6 fw-bold' style={{ color: item.id === activeItem ? "#4791cf" : "#3e3e3e" }}>{item.title}</p>
 										</Stack>
 									</div>
 								</li>

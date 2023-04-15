@@ -1,0 +1,14 @@
+.btn-main-default{
+	background-color: #fff !important;
+	color: #222 !important;
+	font-weight: bold !important;
+    padding: 8px 40px !important;
+}
+.btn-main-active{
+	background-color: #438fce !important;
+	color: #fff !important;
+}
+.btn-lightmain{
+	background-color: #d1e1f1 !important;
+	color: #589ad2 !important;
+}

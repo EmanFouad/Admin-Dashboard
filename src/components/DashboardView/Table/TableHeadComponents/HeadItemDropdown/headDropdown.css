@@ -1,0 +1,9 @@
+.head-input-wrapper .input-wrapper input{
+	direction: rtl !important;
+}
+.head-input-wrapper .input-wrapper input:focus{
+	box-shadow: none !important;
+}
+.head-input-wrapper .bg-transparent{
+	background-color: #fff !important;
+}

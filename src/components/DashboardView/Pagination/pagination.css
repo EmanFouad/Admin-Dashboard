@@ -1,0 +1,9 @@
+.pagination-items-list{
+	direction: ltr;
+}
+.pagination-items-list .pagination .page-item{
+	margin-inline-end: 10px !important;
+}
+.pagination-items-list .pagination .page-item .page-link{
+	border-radius: 5px !important;
+}

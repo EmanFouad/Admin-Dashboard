@@ -1,6 +1,7 @@
 import './App.css';
 import { Container, Row, Col } from 'react-bootstrap';
 import SideMenu from './components/SideMenu';
+import DashboardView from './components/DashboardView';
 
 function App() {
   return (
@@ -9,7 +10,9 @@ function App() {
         <Col lg={2}>
 			<SideMenu />
 		</Col>
-        <Col lg={10}>2 of 2</Col>
+        <Col lg={10}>
+			<DashboardView />
+		</Col>
       </Row>
     </Container>
   );
