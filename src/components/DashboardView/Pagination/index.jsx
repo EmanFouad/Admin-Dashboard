@@ -61,7 +61,7 @@ const DashboardPagination = ({ numOfRecord, setNumOfRecord, currentPage, setCurr
 				<div className='results-number-container'>
 					<p>
 						النتائج {" "}
-						<span>{resultsStart + 1}-{resultsEnd}</span>{" "}
+						<span>{resultsStart + 1}-{resultsEnd > data.length ? data.length : resultsEnd}</span>{" "}
 						من أصل {" "}
 						<span>{data.length}</span>
 					</p>

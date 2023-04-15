@@ -16,7 +16,7 @@ const ComplaintStatus = ({ label }) => {
 			statusStyle = { backgroundColor: "#e6e6e6", color: "#878787" }
 			statusText = "محولة"
 			break;
-		case "closedReceipt":
+		case "receiptClosed":
 			statusStyle = { backgroundColor: "#d5f4e7", color: "#52d29c" }
 			statusText = "مغلقة مع قسيمة"
 			break;
