@@ -42,8 +42,7 @@ const DashboardTable = ({ data, start, end }) => {
 		{ value: 'moved', text: 'محولة' },
 		{ value: 'closedReceipt ', text: 'مغلقة مع قسيمة' },
 	];
-
-	console.log("data",data.slice(start, end))
+	
 	return (
 		<div className='table-wrapper mb-5'>
 			<div className='table-container'>
@@ -93,7 +92,7 @@ const DashboardTable = ({ data, start, end }) => {
 								<HeadItemInput inputType="text" title="اسم العميل" placeholder="أدخل اسم العميل " />
 							</th>
 							<th>
-								<HeadItemInput inputType="text" title="رقم هاتف العميل" placاسمeholder="أدخل رقم الهاتف المحمول" />
+								<HeadItemInput inputType="text" title="رقم هاتف العميل" placeholder="أدخل رقم الهاتف المحمول" />
 							</th>
 							<th>
 								<HeadItemInput inputType="text" title="الرقم القومى" placeholder="أدخل الرقم القومى " />
@@ -105,21 +104,22 @@ const DashboardTable = ({ data, start, end }) => {
 					</thead>
 					<tbody>
 						{
+							data &&
 							data.slice(start, end).map((row, indx) => (
 								<tr key={indx}>
 									{
 										row.map((item, idx) => (
 											<>
 												{
-													item.value === "status" ?
+													item.name === "complaintStatus" ?
 														<td key={idx}>
-															<ComplaintStatus label="pending" />
+															<ComplaintStatus label={item.label} />
 														</td> :
-														item.value === "btn" ?
+														item.name === "details" ?
 															<td key={idx}>
 																<BtnView />
 															</td> :
-															<td key={idx}>{indx + 1}{item.value}</td>
+															<td key={idx}>{item.value}</td>
 												}
 											</>
 

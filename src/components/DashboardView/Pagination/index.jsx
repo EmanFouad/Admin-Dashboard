@@ -2,7 +2,7 @@ import React from 'react'
 import { Form, Pagination } from 'react-bootstrap';
 import "./pagination.css"
 
-const DashboardPagination = ({ numOfRecord, setNumOfRecord, currentPage, setCurrentPage, data }) => {
+const DashboardPagination = ({ numOfRecord, setNumOfRecord, currentPage, setCurrentPage, data, resultsStart, resultsEnd }) => {
 	const numOfPagesAndRecordOptions = Math.ceil(data.length / numOfRecord)
 
 	const handleChange = (e) => {
@@ -60,10 +60,10 @@ const DashboardPagination = ({ numOfRecord, setNumOfRecord, currentPage, setCurr
 				</div>
 				<div className='results-number-container'>
 					<p>
-						النتائج
-						<span>11-20</span>
-						من أصل
-						<span>100</span>
+						النتائج {" "}
+						<span>{resultsStart + 1}-{resultsEnd}</span>{" "}
+						من أصل {" "}
+						<span>{data.length}</span>
 					</p>
 				</div>
 			</div>
