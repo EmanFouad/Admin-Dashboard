@@ -12,7 +12,7 @@ const HeadItemDropdown = ({ options, title }) => {
 	const handleRemove = () => {
 		setSelected("")
 	}
-	console.log("selected", selected)
+
 	return (
 		<div className='head-input-wrapper'>
 			<div className='head-input-container'>

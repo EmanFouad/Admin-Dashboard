@@ -5,8 +5,9 @@ import HeadItemDropdown from './TableHeadComponents/HeadItemDropdown';
 import HeadItemDate from './TableHeadComponents/HeadItemDate';
 import ComplaintStatus from './component/complaintStatus';
 import BtnView from './component/BtnView';
+import "./table.css";
 
-const DashboardTable = () => {
+const DashboardTable = ({ data, start, end }) => {
 	const optionsComplaintDepartment = [
 		{ value: '', text: 'أختر القسم المختص بالشكوى' },
 		{ value: 'inventory', text: 'الحصر' },
@@ -41,6 +42,8 @@ const DashboardTable = () => {
 		{ value: 'moved', text: 'محولة' },
 		{ value: 'closedReceipt ', text: 'مغلقة مع قسيمة' },
 	];
+
+	console.log("data",data.slice(start, end))
 	return (
 		<div className='table-wrapper mb-5'>
 			<div className='table-container'>
@@ -101,30 +104,31 @@ const DashboardTable = () => {
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td>325147895</td>
-							<td>الحصر</td>
-							<td>
-								<ComplaintStatus label="pending" />
-							</td>
-							<td>20/1/2023</td>
-							<td>15/4/2023</td>
-							<td>لوريم ايبسوم</td>
-							<td>لوريم ايبسوم</td>
-							<td>لوريم ايبسوم</td>
-							<td>لوريم ايبسوم</td>
-							<td>لوريم ايبسوم</td>
-							<td>لوريم ايبسوم</td>
-							<td>لوريم ايبسوم</td>
-							<td>لوريم ايبسوم</td>
-							<td>لوريم ايبسوم</td>
-							<td>لوريم ايبسوم</td>
-							<td>لوريم ايبسوم</td>
-							<td>
-								<BtnView />
-							</td>
-						</tr>
-					
+						{
+							data.slice(start, end).map((row, indx) => (
+								<tr key={indx}>
+									{
+										row.map((item, idx) => (
+											<>
+												{
+													item.value === "status" ?
+														<td key={idx}>
+															<ComplaintStatus label="pending" />
+														</td> :
+														item.value === "btn" ?
+															<td key={idx}>
+																<BtnView />
+															</td> :
+															<td key={idx}>{indx + 1}{item.value}</td>
+												}
+											</>
+
+										))
+									}
+								</tr>
+							))
+						}
+
 					</tbody>
 				</Table>
 			</div>

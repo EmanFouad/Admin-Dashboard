@@ -7,3 +7,6 @@
 .pagination-items-list .pagination .page-item .page-link{
 	border-radius: 5px !important;
 }
+.pages-number-container select{
+	width: auto !important;
+}

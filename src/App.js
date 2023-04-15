@@ -1,7 +1,8 @@
-import './App.css';
+import React from 'react'
 import { Container, Row, Col } from 'react-bootstrap';
 import SideMenu from './components/SideMenu';
 import DashboardView from './components/DashboardView';
+import './App.css';
 
 function App() {
   return (

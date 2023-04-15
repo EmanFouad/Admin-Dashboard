@@ -1,30 +1,61 @@
 import React from 'react'
-import { Pagination } from 'react-bootstrap';
+import { Form, Pagination } from 'react-bootstrap';
 import "./pagination.css"
 
-const DashboardPagination = () => {
+const DashboardPagination = ({ numOfRecord, setNumOfRecord, currentPage, setCurrentPage, data }) => {
+	const numOfPagesAndRecordOptions = Math.ceil(data.length / numOfRecord)
+
+	const handleChange = (e) => {
+		setNumOfRecord(e.target.value)
+	}
+	const paginationItems = () =>
+		Array.from(
+			{ length: numOfPagesAndRecordOptions }, (value, index) => 1 + index
+		);
+	const recordOptions = () =>
+		Array.from(
+			{ length: numOfPagesAndRecordOptions }, (value, index) => (index + 1) * 10
+		);
+
+	const handleClick = (e) => {
+		setCurrentPage(Number(e.target.attributes.value.nodeValue))
+	}
+
 	return (
 		<div className='pagination-wrapper'>
 			<div className='pagination-container d-flex justify-content-between align-items-center'>
-				<div className='pages-number-container'>
-					<p>عدد النتائج فى الصفحة</p>
+				<div className='pages-number-container d-flex align-items-center'>
+					<p className='me-3'>عدد النتائج فى الصفحة</p>
+					<Form.Select value={numOfRecord} onChange={handleChange}>
+						{
+							recordOptions().map((option, indx) => (
+								<option value={option} key={indx}>{option}</option>
+							))
+						}
+					</Form.Select>
 				</div>
 				<div className='pagination-items-list'>
 					<Pagination>
-						<Pagination.First />
-						<Pagination.Prev />
-						<Pagination.Item>{1}</Pagination.Item>
-						<Pagination.Item>{2}</Pagination.Item>
-						<Pagination.Item>{3}</Pagination.Item>
-						<Pagination.Item active>{4}</Pagination.Item>
-						<Pagination.Item>{5}</Pagination.Item>
-						<Pagination.Item disabled>{6}</Pagination.Item>
-						<Pagination.Item>{7}</Pagination.Item>
-						<Pagination.Item>{8}</Pagination.Item>
-						<Pagination.Item>{9}</Pagination.Item>
-						<Pagination.Item>{10}</Pagination.Item>
-						<Pagination.Next />
-						<Pagination.Last />
+						{
+							currentPage !== 1 ?
+								<>
+									<Pagination.First onClick={() => setCurrentPage(1)} />
+									<Pagination.Prev onClick={() => setCurrentPage((prevPage) => prevPage - 1)} />
+								</> : null
+						}
+						{
+
+							paginationItems().map((item, indx) => (
+								<Pagination.Item value={item} key={indx} onClick={handleClick} active={currentPage === item ? true : false}>{item}</Pagination.Item>
+							))
+						}
+						{
+							currentPage !== numOfPagesAndRecordOptions ?
+								<>
+									<Pagination.Next onClick={() => setCurrentPage((prevPage) => prevPage + 1)} />
+									<Pagination.Last onClick={() => setCurrentPage(numOfPagesAndRecordOptions)} />
+								</> : null
+						}
 					</Pagination>
 				</div>
 				<div className='results-number-container'>

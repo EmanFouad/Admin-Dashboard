@@ -1,0 +1,4 @@
+.table-wrapper .table-responsive{
+	max-height: 604px !important;
+    overflow-y: scroll !important;
+}

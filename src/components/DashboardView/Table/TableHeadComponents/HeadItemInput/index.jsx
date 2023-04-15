@@ -11,7 +11,6 @@ const HeadItemInput = ({inputType, title, placeholder}) => {
 	const handleRemove = () => {
 		setSearchTerm("")
 	}
-	console.log("searchterm", searchTerm)
 	return (
 		<div className='head-input-wrapper'>
 			<div className='head-input-container'>
