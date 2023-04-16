@@ -8,10 +8,10 @@ function App() {
   return (
     <Container fluid>
       <Row>
-        <Col lg={2}>
+        <Col lg={2} md={4}>
 			<SideMenu />
 		</Col>
-        <Col lg={10}>
+        <Col lg={10} md={8}>
 			<DashboardView />
 		</Col>
       </Row>

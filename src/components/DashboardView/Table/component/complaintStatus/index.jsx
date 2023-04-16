@@ -27,7 +27,7 @@ const ComplaintStatus = ({ label }) => {
 	return (
 		<div className='complaint-status-wrapper'>
 			<div className='complaint-status-container'>
-				<Button className='rounded-pill fw-bold' style={statusStyle}>{statusText}</Button>
+				<Button className='rounded-pill fw-bold py-1' style={statusStyle}>{statusText}</Button>
 			</div>
 		</div>
 	)

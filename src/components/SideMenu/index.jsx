@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Stack } from 'react-bootstrap';
 import { Icon } from './Icon';
 import "./sidemenu.css"
+import User from './User';
 
 const SideMenu = () => {
 	const [activeItem, setActiveItem] = useState(1)
@@ -45,6 +46,7 @@ const SideMenu = () => {
 							))
 						}
 					</ul>
+					<User />
 				</nav>
 			</div>
 		</div>

@@ -10,3 +10,9 @@
 .pages-number-container select{
 	width: auto !important;
 }
+@media (max-width: 991.98px) { 
+	.pagination-wrapper .pagination-container{
+		flex-direction: column !important;
+		gap: 20px;
+	}
+ }

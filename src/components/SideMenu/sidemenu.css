@@ -1,3 +1,12 @@
+.sidemenu-wrapper,.sidemenu-container{
+	height: 100% !important;
+}
+.sidemenu-body{
+	height: 85% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+}
 .sidemenu-body > ul li:hover p{
 	color: #4791cf !important;
 	cursor: pointer;
@@ -11,3 +20,10 @@
 .icon-hover:hover{
 	cursor: pointer;
 }
+
+@media (max-width: 991.98px) { 
+	.sidemenu-body{
+		height: auto !important;
+		
+	}
+ }

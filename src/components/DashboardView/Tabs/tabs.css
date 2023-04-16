@@ -12,3 +12,16 @@
 	background-color: #d1e1f1 !important;
 	color: #589ad2 !important;
 }
+.tabs-list{
+	flex-wrap: wrap;
+}
+@media (max-width: 991.98px) { 
+	.dashboard-tabs-wrapper .dashboard-tabs-container{
+		flex-direction: column !important;
+		gap: 20px;
+		margin-bottom: 20px;
+	}
+	.tabs-list li{
+		margin-bottom: 10px;
+	}
+ }

@@ -62,7 +62,14 @@ const DashboardTable = ({
         <Table responsive>
           <thead>
             <tr>
-              <th>
+              <th
+                style={{
+                  position: "sticky",
+                  right: "0px",
+                  backgroundColor: "#fff",
+				  zIndex:"99"
+                }}
+              >
                 <HeadItemInput
                   inputType="number"
                   title="رقم الشكوى"
@@ -159,7 +166,14 @@ const DashboardTable = ({
                   placeholder="أدخل الرقم القومى "
                 />
               </th>
-              <th className="align-top">
+              <th
+                className="align-top"
+                style={{
+                  position: "sticky",
+                  left: "0px",
+                  backgroundColor: "#fff",
+                }}
+              >
                 <p>المزيد</p>
               </th>
             </tr>
@@ -179,7 +193,21 @@ const DashboardTable = ({
                             <BtnView />
                           </td>
                         ) : (
-                          <td key={idx}>{item.value}</td>
+                          <td
+                            key={idx}
+                            style={{
+                              position:
+                                item.name === "complaintNumber"
+                                  ? "sticky"
+                                  : "static",
+                              right:
+                                item.name === "complaintNumber"
+                                  ? "0px"
+                                  : "auto",
+                            }}
+                          >
+                            {item.value}
+                          </td>
                         )}
                       </>
                     ))}
@@ -195,11 +223,34 @@ const DashboardTable = ({
                             <ComplaintStatus label={item.label} />
                           </td>
                         ) : item.name === "details" ? (
-                          <td key={idx}>
+                          <td
+                            key={idx}
+                            style={{
+                              position:
+                                item.name === "details" ? "sticky" : "static",
+                              left: item.name === "details" ? "0px" : "auto",
+                              backgroundColor: "#fff",
+                            }}
+                          >
                             <BtnView />
                           </td>
                         ) : (
-                          <td key={idx}>{item.value}</td>
+                          <td
+                            key={idx}
+                            style={{
+                              position:
+                                item.name === "complaintNumber"
+                                  ? "sticky"
+                                  : "static",
+                              right:
+                                item.name === "complaintNumber"
+                                  ? "0px"
+                                  : "auto",
+                              backgroundColor: "#fff",
+                            }}
+                          >
+                            {item.value}
+                          </td>
                         )}
                       </>
                     ))}
