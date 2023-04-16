@@ -3,6 +3,7 @@ import { Stack } from 'react-bootstrap';
 import { Icon } from './Icon';
 import "./sidemenu.css"
 import User from './User';
+import logo from "./../../assets/images/logo.png"
 
 const SideMenu = () => {
 	const [activeItem, setActiveItem] = useState(1)
@@ -21,7 +22,7 @@ const SideMenu = () => {
 			<div className='sidemenu-container'>
 				<div className='sidemenu-head d-flex justify-content-between align-items-center px-1 py-3 border-bottom'>
 					<div className='logo-wrap w-75'>
-						<img className='w-100' src="/assets/images/logo.png" alt="logo" />
+						<img className='w-100' src={logo} alt="logo" />
 					</div>
 					<Icon
 						iconName="List"
