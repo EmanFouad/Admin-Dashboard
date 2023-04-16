@@ -45,7 +45,6 @@ const DashboardView = () => {
               item.name === "complaintStatus") && 
             item.label?.includes(optionSelected)
           ) {
-			console.log("optionSelecteddddddddd",optionSelected)
             return filteredData.push(rowItem);
           }
 		  console.log("item",item)
@@ -65,7 +64,7 @@ const DashboardView = () => {
         : (currentPage - 1) * numOfRecord + numOfRecord
     );
   }, [currentPage, numOfRecord]);
-  console.log("optionSelected",optionSelected)
+
   return (
     <div className="p-5 bg-light">
       <DashboardHead />
