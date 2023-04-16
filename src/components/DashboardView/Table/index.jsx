@@ -67,7 +67,7 @@ const DashboardTable = ({
                   position: "sticky",
                   right: "0px",
                   backgroundColor: "#fff",
-				  zIndex:"99"
+                  zIndex: "99",
                 }}
               >
                 <HeadItemInput
@@ -189,7 +189,15 @@ const DashboardTable = ({
                             <ComplaintStatus label={item.label} />
                           </td>
                         ) : item.name === "details" ? (
-                          <td key={idx}>
+                          <td
+                            key={idx}
+                            style={{
+                              position:
+                                item.name === "details" ? "sticky" : "static",
+                              left: item.name === "details" ? "0px" : "auto",
+                              backgroundColor: "#fff",
+                            }}
+                          >
                             <BtnView />
                           </td>
                         ) : (
@@ -204,6 +212,7 @@ const DashboardTable = ({
                                 item.name === "complaintNumber"
                                   ? "0px"
                                   : "auto",
+								  backgroundColor: "#fff",
                             }}
                           >
                             {item.value}

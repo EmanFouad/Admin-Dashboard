@@ -30,7 +30,6 @@ const DashboardView = () => {
 
   useEffect(() => {
     let filteredData = [];
-    (inputSearchTerm || optionSelected) &&
       dataRows &&
       dataRows.map((rowItem) => {
         return rowItem.map((item) => {
@@ -41,18 +40,22 @@ const DashboardView = () => {
           ) {
             return filteredData.push(rowItem);
           } else if (
+			optionSelected !== "" &&
             (item.name === "complaintDepartment" ||
               item.name === "complaintStatus") && 
             item.label?.includes(optionSelected)
           ) {
+			console.log("optionSelecteddddddddd",optionSelected)
             return filteredData.push(rowItem);
           }
+		  console.log("item",item)
+
           return filteredData;
         });
       });
 	
     setSearchData(filteredData);
-  }, [inputSearchTerm, optionSelected]);
+  }, [inputSearchTerm,optionSelected]);
 
   useEffect(() => {
     setDataSliceStart(currentPage === 1 ? 0 : (currentPage - 1) * numOfRecord);
@@ -62,7 +65,7 @@ const DashboardView = () => {
         : (currentPage - 1) * numOfRecord + numOfRecord
     );
   }, [currentPage, numOfRecord]);
-  // console.log("optionSelected",optionSelected,"searchData",searchData)
+  console.log("optionSelected",optionSelected)
   return (
     <div className="p-5 bg-light">
       <DashboardHead />
